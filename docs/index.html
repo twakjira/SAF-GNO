@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAF-GNO: Certified drift verification for agentic configuration of steel-building product families using a graph neural operator with statically admissible force fields</title>
+<meta name="description" content="SAF-GNO generates exactly equilibrated member force fields inside a Prager–Synge enclosure, and every drift decision certified for a configuration agent is correct for any value of the model parameters.">
+<meta name="author" content="Tadesse G. Wakjira, Hana L. Goshu">
+<meta name="keywords" content="graph neural operator, certified computation, drift verification, configuration agents, industrialized construction, Prager Synge enclosure, Krylov methods, AI4RISE Lab">
+<link rel="canonical" href="https://twakjira.github.io/SAF-GNO/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SAF-GNO: Certified drift verification for agentic configuration of steel-building product families using a graph neural operator with statically admissible force fields">
+<meta property="og:description" content="SAF-GNO generates exactly equilibrated member force fields inside a Prager–Synge enclosure, and every drift decision certified for a configuration agent is correct for any value of the model parameters.">
+<meta property="og:url" content="https://twakjira.github.io/SAF-GNO/">
+<meta property="og:image" content="https://twakjira.github.io/SAF-GNO/assets/fig_architecture.jpg">
+<meta property="og:site_name" content="SAF-GNO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SAF-GNO: certified drift verification for configuration agents">
+<meta name="twitter:description" content="SAF-GNO generates exactly equilibrated member force fields inside a Prager–Synge enclosure, and every drift decision certified for a configuration agent is correct for any value of the model parameters.">
+<meta name="twitter:image" content="https://twakjira.github.io/SAF-GNO/assets/fig_architecture.jpg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js" defer></script>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <span class="topnav-brand"><span>SAF</span>-GNO</span>
+    <a class="navlink" href="#abstract">Abstract</a>
+    <a class="navlink" href="#method">Method</a>
+    <a class="navlink" href="#results">Results</a>
+    <a class="navlink" href="#explore">Explore</a>
+    <a class="navlink" href="#code">Code</a>
+    <a class="navlink" href="#citation">Citation</a>
+  </div>
+</nav>
+
+<div class="section title-section fadein">
+  <h1 class="project-title">
+    <span class="accent">SAF-GNO</span>: Certified drift verification for agentic configuration of steel-building product families using a graph neural operator with statically admissible force fields
+  </h1>
+  <div class="authors">
+    <a href="https://www.ai4riselab.com" target="_blank" rel="noopener">Tadesse G. Wakjira</a><sup>1</sup>,&nbsp;
+    <a href="https://www.hanagoshu.com" target="_blank" rel="noopener">Hana L. Goshu</a><sup>2</sup>
+  </div>
+  <div class="affiliations">
+    <span><sup>1</sup>Kennesaw State University</span>
+    <span><sup>2</sup>The Hong Kong Polytechnic University</span>
+  </div>
+  <div class="buttons-row">
+    <a class="pill pill-paper pill-disabled" href="#" onclick="return false;"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Paper</a>
+    <a class="pill pill-method" href="#method"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg>Method</a>
+    <a class="pill pill-method" href="#explore"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg>Explore</a>
+    <a class="pill pill-code" href="https://github.com/twakjira/SAF-GNO" target="_blank" rel="noopener noreferrer"><svg class="pill-icon" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Code</a>
+    <a class="pill pill-data" href="https://github.com/zurutech/stand" target="_blank" rel="noopener noreferrer"><svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>Data</a>
+  </div>
+</div>
+
+<div class="section reveal" id="abstract">
+  <h2>Abstract</h2>
+  <p class="abstract-text">
+    Configuration agents need verification tools whose classifications are correct for every proposed building,
+    whereas standard learned surrogates provide no deterministic error bound. SAF-GNO generates a displacement space
+    and exactly equilibrated member force fields for each steel frame. A few Krylov iterations refine both fields
+    inside a Prager–Synge enclosure, and every certified drift decision is correct for any value of the model
+    parameters. A learned self-stress space and a learned equilibration operator, trained through the certified
+    refinement, reduce the iterations required for certification.
+  </p>
+  <div class="metric-row">
+    <div class="metric-card primary"><div class="label">Iterations to certification, StAnD test</div><div class="value">0.254</div></div>
+    <div class="metric-card"><div class="label">Iterations to certification, steel family test</div><div class="value">0.627</div></div>
+    <div class="metric-card accent-green"><div class="label">Incorrect certified decisions</div><div class="value">0</div></div>
+    <div class="metric-card"><div class="label">False acceptances without the certificate</div><div class="value">268</div></div>
+  </div>
+</div>
+
+<div class="section reveal" id="method">
+  <h2>Method</h2>
+  <figure class="architecture">
+    <img src="assets/fig_architecture.jpg" alt="Architecture of SAF-GNO: the graph neural operator trunk generates the displacement space, Module 1 generates self equilibrated force modes, Module 2 generates particular solutions, and the certified refinement bounds every monitored drift.">
+    <p class="caption">Two admissible fields bound every monitored drift from both sides.</p>
+  </figure>
+  <div class="module-list">
+    <p><strong>M1. Learned self-stress space.</strong> Member force modes decoded in member coordinates and projected
+      exactly onto the null space of the equilibrium operator, used as dual Galerkin space and deflation space.</p>
+    <p><strong>M2. Learned equilibration operator.</strong> A correction linear in the loads, in loop coordinates of the
+      frame, added to the lift of the force method, and every particular solution satisfies equilibrium.</p>
+    <p><strong>Trunk.</strong> Graph neural operator of AGNO generating the displacement space.</p>
+    <p><strong>Certified refinement.</strong> Deflated conjugate gradients with algebraic multigrid on both sides of the
+      enclosure, shared by every compared method.</p>
+    <p><strong>Training.</strong> Trunk and both modules trained jointly through the refinement with a smooth form of the
+      decision rule.</p>
+  </div>
+</div>
+
+<div class="section reveal" id="results">
+  <h2>Results</h2>
+  <p class="lead">Mean Krylov iterations required for certification, lower is better, and certification rate after k
+    iterations, mean of five seeds. No method certified an incorrect classification.</p>
+  <div class="table-wrap">
+    <table data-sortable data-lower="1,4">
+      <thead><tr><th>Method</th><th>StAnD iterations</th><th>StAnD, k = 0 (%)</th><th>StAnD, k = 2 (%)</th><th>Steel family iterations</th><th>Steel family, k = 0 (%)</th><th>Steel family, k = 2 (%)</th></tr></thead>
+      <tbody>
+        <tr class="ours"><td>SAF-GNO</td><td>0.254</td><td>89.3</td><td>97.4</td><td>0.627</td><td>64.7</td><td>95.9</td></tr>
+        <tr><td>AGNO, stage 2</td><td>0.331</td><td>85.8</td><td>96.8</td><td>0.861</td><td>55.8</td><td>93.8</td></tr>
+        <tr><td>FCLGA, stage 2</td><td>0.299</td><td>87.4</td><td>97.1</td><td>1.086</td><td>46.2</td><td>91.7</td></tr>
+        <tr><td>GNN-POD, stage 2</td><td>0.503</td><td>78.8</td><td>95.2</td><td>1.451</td><td>36.7</td><td>86.7</td></tr>
+        <tr><td>AGNO, stage 1</td><td>0.425</td><td>81.7</td><td>96.0</td><td>1.231</td><td>45.4</td><td>89.4</td></tr>
+        <tr><td>FCLGA, stage 1</td><td>0.448</td><td>81.8</td><td>95.5</td><td>1.588</td><td>35.3</td><td>85.0</td></tr>
+        <tr><td>GNN-POD, stage 1</td><td>0.462</td><td>81.0</td><td>95.3</td><td>1.759</td><td>31.7</td><td>82.2</td></tr>
+        <tr><td>AMG PCG</td><td>1.282</td><td>46.2</td><td>85.6</td><td>4.400</td><td>0.5</td><td>42.5</td></tr>
+        <tr><td>Two level CG</td><td>6.415</td><td>44.8</td><td>60.0</td><td>15.132</td><td>0.6</td><td>11.7</td></tr>
+        <tr><td>PCG</td><td>9.463</td><td>33.7</td><td>53.5</td><td>19.227</td><td>0.0</td><td>6.7</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="results-subhead">Contribution of each module, iterations per decision</div>
+  <div class="table-wrap">
+    <table data-sortable data-lower="1,2">
+      <thead><tr><th>Model</th><th>StAnD</th><th>Steel family</th></tr></thead>
+      <tbody>
+        <tr class="ours"><td>SAF-GNO</td><td>0.254</td><td>0.627</td></tr>
+        <tr><td>Module 1 only</td><td>0.261</td><td>0.714</td></tr>
+        <tr><td>Module 2 only</td><td>0.296</td><td>0.707</td></tr>
+        <tr><td>Module 2 with a classical self-stress space</td><td>0.296</td><td>0.707</td></tr>
+        <tr><td>AGNO, stage 2</td><td>0.331</td><td>0.861</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="results-subhead">Structures larger than every training structure, iterations per decision</div>
+  <div class="table-wrap">
+    <table data-sortable data-lower="1,2,3">
+      <thead><tr><th>Method</th><th>Medium StAnD</th><th>Large StAnD</th><th>Large steel family</th></tr></thead>
+      <tbody>
+        <tr class="ours"><td>SAF-GNO</td><td>1.14</td><td>2.62</td><td>16.49</td></tr>
+        <tr><td>AGNO, stage 2</td><td>1.43</td><td>3.20</td><td>20.34</td></tr>
+        <tr><td>FCLGA, stage 2</td><td>1.33</td><td>2.94</td><td>21.17</td></tr>
+        <tr><td>GNN-POD, stage 2</td><td>1.96</td><td>4.02</td><td>22.81</td></tr>
+        <tr><td>AMG PCG</td><td>3.53</td><td>5.74</td><td>24.40</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="results-subhead">Platform configuration of 12 steel buildings by greedy and LLM agents</div>
+  <div class="table-wrap">
+    <table data-sortable data-lower="2,3">
+      <thead><tr><th>Verification tool</th><th>Greedy calls</th><th>Incorrect responses, greedy</th><th>Incorrect responses, LLM</th><th>Configured designs over the limit</th></tr></thead>
+      <tbody>
+        <tr><td>T0 direct solver</td><td>1,122</td><td>0</td><td>0</td><td>0 of 144</td></tr>
+        <tr class="ours"><td>T1 certified SAF-GNO</td><td>1,122</td><td>0</td><td>0</td><td>0 of 144</td></tr>
+        <tr><td>T2 certified AMG PCG</td><td>1,122</td><td>0</td><td>0</td><td>0 of 144</td></tr>
+        <tr><td>T3 uncertified prediction</td><td>1,156</td><td>241</td><td>27</td><td>9 of 144</td></tr>
+        <tr><td>T4 conformal prediction</td><td>1,122</td><td>0</td><td>1</td><td>0 of 144</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure class="architecture" style="margin-top:2rem">
+    <img src="assets/fig_budget.jpg" loading="lazy" alt="Certification rate and fully certified structures as a function of the number of Krylov iterations for SAF-GNO, three graph neural network baselines and three classical solvers on both test datasets.">
+    <p class="caption">Certified assessments and structures as a function of the iteration budget on both test datasets.</p>
+  </figure>
+</div>
+
+<div class="section wide reveal" id="explore">
+  <h2>Explore the decisions</h2>
+  <p class="lead">Drag the divider to wipe between the reference classifications and the certified decisions of a
+    validation structure, or cycle the frames.</p>
+  <div class="viewer" id="viewer">
+    <div class="viewer-bar">
+      <div class="frame-tabs" id="dtabs"></div>
+      <span class="viewer-spacer"></span>
+      <div class="frame-tabs" id="ftabs"></div>
+      <button class="tab play" id="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span id="playtxt">Cycle frames</span></button>
+    </div>
+    <div class="viewer-stage">
+      <div class="stage-frame" id="stage">
+        <img id="base" alt="reference decisions">
+        <img id="top" class="top" alt="certified decisions">
+        <span class="stage-label left">Reference</span>
+        <span class="stage-label right" id="lab">SAF-GNO, k = 1</span>
+        <div class="handle"><span class="handle-grip">&#9666;&#9656;</span></div>
+      </div>
+      <div class="stage-side">
+        <div class="thumbs" id="thumbs"></div>
+        <div class="stage-meta" id="meta"></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><i style="background:#44AA99"></i>within the limit</span>
+      <span><i style="background:#882255"></i>exceeding the limit</span>
+      <span><i style="background:#E6E6E6"></i>uncertified</span>
+    </div>
+  </div>
+  <figure class="architecture" style="margin-top:2rem">
+    <img src="assets/fig_transfer.jpg" loading="lazy" alt="Mean Krylov iterations required for certification on medium and large StAnD frames and on large steel buildings, with the individual seeds of the learned models.">
+    <p class="caption">Iterations to certification on structures larger than every training structure.</p>
+  </figure>
+  <figure class="architecture" style="margin-top:2rem">
+    <img src="assets/fig_agent.jpg" loading="lazy" alt="Computed and reference drift ratios of the certified and uncertified tools, steel mass of the configured families, certification levels of the certified tools and the runs of the LLM agent.">
+    <p class="caption">Platform configuration with certified, uncertified and conformal verification tools.</p>
+  </figure>
+</div>
+
+<div class="section reveal" id="code">
+  <h2>Code</h2>
+  <div class="callout">Source code, the generator of the steel frame family and trained checkpoints will be
+    released in this repository on acceptance of the paper.</div>
+</div>
+
+<div class="section reveal" id="citation">
+  <h2>Citation</h2>
+  <div class="citation-block">@article{wakjira2026safgno,<br>
+&nbsp;&nbsp;title&nbsp;&nbsp;&nbsp;= {Certified drift verification for agentic configuration of steel-building<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;product families using a graph neural operator with statically admissible<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;force fields},<br>
+&nbsp;&nbsp;author&nbsp;&nbsp;= {Wakjira, Tadesse G. and Goshu, Hana L.},<br>
+&nbsp;&nbsp;journal&nbsp;= {Under Review},<br>
+&nbsp;&nbsp;year&nbsp;&nbsp;&nbsp;&nbsp;= {2026}<br>
+}</div>
+</div>
+
+<footer>
+  Developed by the <a href="https://www.ai4riselab.com" target="_blank" rel="noopener">AI4RISE Lab</a>
+</footer>
+
+</body>
+</html>

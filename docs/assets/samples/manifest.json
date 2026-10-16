@@ -1,0 +1,174 @@
+[
+ {
+  "tag": "stand",
+  "label": "StAnD frames",
+  "items": [
+   {
+    "thumb": "assets/samples/stand_0_thumb.jpg",
+    "img": "assets/samples/stand_0_ref.jpg",
+    "total": 24,
+    "dof": 2850,
+    "resolved": {
+     "k0": 8,
+     "k1": 18,
+     "k2": 19,
+     "amg": 2
+    },
+    "k0": "assets/samples/stand_0_k0.jpg",
+    "k1": "assets/samples/stand_0_k1.jpg",
+    "k2": "assets/samples/stand_0_k2.jpg",
+    "amg": "assets/samples/stand_0_amg.jpg"
+   },
+   {
+    "thumb": "assets/samples/stand_1_thumb.jpg",
+    "img": "assets/samples/stand_1_ref.jpg",
+    "total": 24,
+    "dof": 2994,
+    "resolved": {
+     "k0": 16,
+     "k1": 22,
+     "k2": 24,
+     "amg": 12
+    },
+    "k0": "assets/samples/stand_1_k0.jpg",
+    "k1": "assets/samples/stand_1_k1.jpg",
+    "k2": "assets/samples/stand_1_k2.jpg",
+    "amg": "assets/samples/stand_1_amg.jpg"
+   },
+   {
+    "thumb": "assets/samples/stand_2_thumb.jpg",
+    "img": "assets/samples/stand_2_ref.jpg",
+    "total": 24,
+    "dof": 2886,
+    "resolved": {
+     "k0": 22,
+     "k1": 24,
+     "k2": 24,
+     "amg": 20
+    },
+    "k0": "assets/samples/stand_2_k0.jpg",
+    "k1": "assets/samples/stand_2_k1.jpg",
+    "k2": "assets/samples/stand_2_k2.jpg",
+    "amg": "assets/samples/stand_2_amg.jpg"
+   },
+   {
+    "thumb": "assets/samples/stand_3_thumb.jpg",
+    "img": "assets/samples/stand_3_ref.jpg",
+    "total": 24,
+    "dof": 2250,
+    "resolved": {
+     "k0": 18,
+     "k1": 22,
+     "k2": 22,
+     "amg": 16
+    },
+    "k0": "assets/samples/stand_3_k0.jpg",
+    "k1": "assets/samples/stand_3_k1.jpg",
+    "k2": "assets/samples/stand_3_k2.jpg",
+    "amg": "assets/samples/stand_3_amg.jpg"
+   },
+   {
+    "thumb": "assets/samples/stand_4_thumb.jpg",
+    "img": "assets/samples/stand_4_ref.jpg",
+    "total": 24,
+    "dof": 3648,
+    "resolved": {
+     "k0": 18,
+     "k1": 18,
+     "k2": 23,
+     "amg": 17
+    },
+    "k0": "assets/samples/stand_4_k0.jpg",
+    "k1": "assets/samples/stand_4_k1.jpg",
+    "k2": "assets/samples/stand_4_k2.jpg",
+    "amg": "assets/samples/stand_4_amg.jpg"
+   }
+  ]
+ },
+ {
+  "tag": "family",
+  "label": "Steel frame family",
+  "items": [
+   {
+    "thumb": "assets/samples/family_0_thumb.jpg",
+    "img": "assets/samples/family_0_ref.jpg",
+    "total": 72,
+    "dof": 9126,
+    "resolved": {
+     "k0": 72,
+     "k1": 72,
+     "k2": 72,
+     "amg": 0
+    },
+    "k0": "assets/samples/family_0_k0.jpg",
+    "k1": "assets/samples/family_0_k1.jpg",
+    "k2": "assets/samples/family_0_k2.jpg",
+    "amg": "assets/samples/family_0_amg.jpg"
+   },
+   {
+    "thumb": "assets/samples/family_1_thumb.jpg",
+    "img": "assets/samples/family_1_ref.jpg",
+    "total": 72,
+    "dof": 3120,
+    "resolved": {
+     "k0": 66,
+     "k1": 72,
+     "k2": 72,
+     "amg": 7
+    },
+    "k0": "assets/samples/family_1_k0.jpg",
+    "k1": "assets/samples/family_1_k1.jpg",
+    "k2": "assets/samples/family_1_k2.jpg",
+    "amg": "assets/samples/family_1_amg.jpg"
+   },
+   {
+    "thumb": "assets/samples/family_2_thumb.jpg",
+    "img": "assets/samples/family_2_ref.jpg",
+    "total": 72,
+    "dof": 1080,
+    "resolved": {
+     "k0": 64,
+     "k1": 72,
+     "k2": 72,
+     "amg": 6
+    },
+    "k0": "assets/samples/family_2_k0.jpg",
+    "k1": "assets/samples/family_2_k1.jpg",
+    "k2": "assets/samples/family_2_k2.jpg",
+    "amg": "assets/samples/family_2_amg.jpg"
+   },
+   {
+    "thumb": "assets/samples/family_3_thumb.jpg",
+    "img": "assets/samples/family_3_ref.jpg",
+    "total": 72,
+    "dof": 7200,
+    "resolved": {
+     "k0": 57,
+     "k1": 72,
+     "k2": 72,
+     "amg": 0
+    },
+    "k0": "assets/samples/family_3_k0.jpg",
+    "k1": "assets/samples/family_3_k1.jpg",
+    "k2": "assets/samples/family_3_k2.jpg",
+    "amg": "assets/samples/family_3_amg.jpg"
+   },
+   {
+    "thumb": "assets/samples/family_4_thumb.jpg",
+    "img": "assets/samples/family_4_ref.jpg",
+    "total": 72,
+    "dof": 2592,
+    "resolved": {
+     "k0": 57,
+     "k1": 68,
+     "k2": 70,
+     "amg": 6
+    },
+    "k0": "assets/samples/family_4_k0.jpg",
+    "k1": "assets/samples/family_4_k1.jpg",
+    "k2": "assets/samples/family_4_k2.jpg",
+    "amg": "assets/samples/family_4_amg.jpg"
+   }
+  ]
+ }
+]
